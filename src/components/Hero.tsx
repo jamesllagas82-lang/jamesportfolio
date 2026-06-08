@@ -1,6 +1,6 @@
 import { useState } from "react";
 import profileImage from "../assets/myprofile.jpg";
-import cvFile from "../assets/Llagas, James Charles M.pdf";
+import cvFile from "../assets/Llagas_James_Charles_M.pdf";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
