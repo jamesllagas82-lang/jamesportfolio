@@ -1,19 +1,28 @@
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import About from "./components/About"
-import Projects from "./components/Projects"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 
 export default function App() {
   return (
-    <div className="font-sans">
+    <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
+
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer/>
+
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+
+      <Footer />
+
     </div>
-  )
+  );
 }
