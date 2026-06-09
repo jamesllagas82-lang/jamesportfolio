@@ -1,6 +1,7 @@
 // const API_URL =
 //   "https://portfolio-backend-steel-six.vercel.app/contact";
-const API_URL = "http://localhost:5000/contact";
+const API_URL = "https://portfolio-backend-dhog.vercel.app/contact";
+
 
 export async function sendEmail(data: {
   name: string;
