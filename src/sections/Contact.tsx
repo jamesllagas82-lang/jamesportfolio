@@ -87,7 +87,7 @@ export default function Contact() {
 
   return (
     <FadeInSection direction="down">
-      <section className="max-w-3xl mx-auto py-20 px-6">
+      <section id="contact" className="max-w-3xl mx-auto py-20 px-6">
 
         <h2 className="text-3xl font-bold mb-6">
           Contact Me
