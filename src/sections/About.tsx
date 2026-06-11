@@ -4,7 +4,7 @@ export default function About() {
   return (
     <FadeInSection direction="left">
       <section
-        id="about"
+        id="aboutme"
         className="max-w-5xl mx-auto py-20 px-6"
       >
         <h2 className="text-3xl font-bold mb-6">

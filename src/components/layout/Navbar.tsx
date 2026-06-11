@@ -10,7 +10,7 @@ export default function Navbar() {
      SCROLL ACTIVE SECTION TRACKER
   ------------------------------*/
   useEffect(() => {
-    const sections = ["home", "about", "projects", "contact"];
+    const sections = ["home", "aboutme", "projects", "contact"];
 
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
