@@ -10,7 +10,7 @@ export default function Navbar() {
      SCROLL ACTIVE SECTION TRACKER
   ------------------------------*/
   useEffect(() => {
-    const sections = ["home", "aboutme", "projects", "contact"];
+    const sections = ["home", "about", "projects", "contact"];
 
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
@@ -24,7 +24,7 @@ export default function Navbar() {
         },
         {
           root: null,
-          threshold: 0.6, // 60% visible = active
+          threshold: 0.3, // 60% visible = active
         }
       );
 
@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* DESKTOP LINKS */}
         <div className="hidden md:flex gap-8 font-medium">
           <a href="#home" className={linkClass("home")}>Home</a>
-          <a href="#aboutme" className={linkClass("aboutme")}>About</a>
+          <a href="#about" className={linkClass("about")}>About</a>
           <a href="#projects" className={linkClass("projects")}>Projects</a>
           <a href="#contact" className={linkClass("contact")}>Contact</a>
         </div>
@@ -82,7 +82,7 @@ export default function Navbar() {
         ${open ? "max-h-60 py-4 opacity-100 scale-100" : "max-h-0 py-0 opacity-0 scale-95"}`}
       >
         <a href="#home" onClick={closeMenu} className={linkClass("home")}>Home</a>
-        <a href="#aboutme" onClick={closeMenu} className={linkClass("aboutme")}>About</a>
+        <a href="#about" onClick={closeMenu} className={linkClass("about")}>About</a>
         <a href="#projects" onClick={closeMenu} className={linkClass("projects")}>Projects</a>
         <a href="#contact" onClick={closeMenu} className={linkClass("contact")}>Contact</a>
       </div>
