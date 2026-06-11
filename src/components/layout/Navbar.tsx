@@ -18,15 +18,13 @@ export default function Navbar() {
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          console.log(id, entry.isIntersecting);
-
           if (entry.isIntersecting) {
             setActive(id);
           }
         },
         {
           root: null,
-          threshold: 0.3, // 60% visible = active
+          threshold: 0.6, // 60% visible = active
         }
       );
 
