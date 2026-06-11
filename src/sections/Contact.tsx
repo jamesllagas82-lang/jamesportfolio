@@ -24,7 +24,7 @@ export default function Contact() {
   const [successModal, setSuccessModal] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
 
@@ -45,9 +45,7 @@ export default function Contact() {
     const validationErrors = validateContactForm(form);
     setErrors(validationErrors);
 
-    const hasError = Object.values(validationErrors).some(
-      (v) => v !== ""
-    );
+    const hasError = Object.values(validationErrors).some((v) => v !== "");
 
     if (hasError) return;
 
@@ -88,77 +86,73 @@ export default function Contact() {
   return (
     <FadeInSection direction="down">
       <section id="contact" className="max-w-3xl mx-auto py-20 px-6">
-
-        <h2 className="text-3xl font-bold mb-6">
-          Contact Me
-        </h2>
+        <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-
           {/* NAME */}
-          <div>
-            <input
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              className="border p-3 rounded-lg w-full"
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm">
-                {errors.name}
-              </p>
-            )}
-          </div>
+          <FadeInSection direction="right">
+            <div>
+              <input
+                name="name"
+                placeholder="Your Name"
+                value={form.name}
+                onChange={handleChange}
+                className="border p-3 rounded-lg w-full"
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
+            </div>
+          </FadeInSection>
 
           {/* EMAIL */}
-          <div>
-            <input
-              name="email"
-              placeholder="Your Email"
-              value={form.email}
-              onChange={handleChange}
-              className="border p-3 rounded-lg w-full"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm">
-                {errors.email}
-              </p>
-            )}
-          </div>
+          <FadeInSection direction="right">
+            <div>
+              <input
+                name="email"
+                placeholder="Your Email"
+                value={form.email}
+                onChange={handleChange}
+                className="border p-3 rounded-lg w-full"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
+            </div>
+          </FadeInSection>
 
           {/* SUBJECT */}
-          <div>
-            <input
-              name="subject"
-              placeholder="Subject"
-              value={form.subject}
-              onChange={handleChange}
-              className="border p-3 rounded-lg w-full"
-            />
-            {errors.subject && (
-              <p className="text-red-500 text-sm">
-                {errors.subject}
-              </p>
-            )}
-          </div>
+          <FadeInSection direction="right">
+            <div>
+              <input
+                name="subject"
+                placeholder="Subject"
+                value={form.subject}
+                onChange={handleChange}
+                className="border p-3 rounded-lg w-full"
+              />
+              {errors.subject && (
+                <p className="text-red-500 text-sm">{errors.subject}</p>
+              )}
+            </div>
+          </FadeInSection>
 
           {/* MESSAGE */}
-          <div>
-            <textarea
-              name="message"
-              rows={5}
-              placeholder="Message"
-              value={form.message}
-              onChange={handleChange}
-              className="border p-3 rounded-lg w-full"
-            />
-            {errors.message && (
-              <p className="text-red-500 text-sm">
-                {errors.message}
-              </p>
-            )}
-          </div>
+          <FadeInSection direction="right">
+            <div>
+              <textarea
+                name="message"
+                rows={5}
+                placeholder="Message"
+                value={form.message}
+                onChange={handleChange}
+                className="border p-3 rounded-lg w-full"
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm">{errors.message}</p>
+              )}
+            </div>
+          </FadeInSection>
 
           {/* BUTTON */}
           <button
@@ -174,10 +168,7 @@ export default function Contact() {
         {showConfirm && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg w-96">
-
-              <h3 className="text-lg font-bold">
-                Confirm Send?
-              </h3>
+              <h3 className="text-lg font-bold">Confirm Send?</h3>
 
               <div className="mt-4 text-sm text-gray-600 space-y-1">
                 <p>{form.name}</p>
@@ -186,7 +177,6 @@ export default function Contact() {
               </div>
 
               <div className="flex justify-end gap-2 mt-6">
-
                 <button
                   onClick={() => setShowConfirm(false)}
                   className="px-4 py-2 border rounded-lg"
@@ -203,7 +193,6 @@ export default function Contact() {
                 >
                   Send
                 </button>
-
               </div>
             </div>
           </div>
@@ -212,9 +201,7 @@ export default function Contact() {
         {/* 🎉 SUCCESS MODAL (ANIMATED) */}
         {successModal && (
           <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-
             <div className="bg-white rounded-2xl shadow-2xl p-8 w-[90%] max-w-sm text-center animate-pop">
-
               {/* ICON */}
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center animate-bounce">
@@ -235,18 +222,12 @@ export default function Contact() {
               </div>
 
               {/* TEXT */}
-              <h2 className="text-xl font-bold text-gray-800">
-                Message Sent!
-              </h2>
+              <h2 className="text-xl font-bold text-gray-800">Message Sent!</h2>
 
-              <p className="text-gray-500 mt-2">
-                I’ll get back to you soon 🚀
-              </p>
-
+              <p className="text-gray-500 mt-2">I’ll get back to you soon 🚀</p>
             </div>
           </div>
         )}
-
       </section>
     </FadeInSection>
   );
