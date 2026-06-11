@@ -10,7 +10,7 @@ export default function Navbar() {
      SCROLL ACTIVE SECTION TRACKER
   ------------------------------*/
   useEffect(() => {
-    const sections = ["home", "about", "education", "skills" ,"projects", "contact"];
+    const sections = ["home", "about", "education", "skills", "projects", "contact"];
 
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
@@ -18,6 +18,8 @@ export default function Navbar() {
 
       const observer = new IntersectionObserver(
         ([entry]) => {
+          console.log(id, entry.isIntersecting);
+
           if (entry.isIntersecting) {
             setActive(id);
           }
