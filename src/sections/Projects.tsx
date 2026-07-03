@@ -6,7 +6,7 @@ import { projects } from "../constants/projects";
 export default function Projects() {
   return (
     <FadeInSection direction="down">
-      <section id="projects" className="bg-gray-50 py-20 px-6">
+      <section id="projects" className="bg-gray-50 py-20 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Featured Projects

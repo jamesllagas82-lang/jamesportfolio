@@ -5,7 +5,7 @@ import { skills } from "../constants/skills";
 export default function Skills() {
   return (
     <FadeInSection direction="right">
-      <section id="skills" className="bg-white py-10 px-6">
+      <section id="skills" className="bg-white py-10 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12">Technical Skills</h2>
 

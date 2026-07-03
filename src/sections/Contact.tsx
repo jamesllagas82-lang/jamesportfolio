@@ -85,7 +85,10 @@ export default function Contact() {
 
   return (
     <FadeInSection direction="down">
-      <section id="contact" className="max-w-3xl mx-auto py-20 px-6">
+      <section
+        id="contact"
+        className="max-w-3xl mx-auto py-20 px-6 scroll-mt-24"
+      >
         <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">

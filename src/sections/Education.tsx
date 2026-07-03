@@ -5,7 +5,10 @@ import FadeInCard from "../components/ui/FadeInCard";
 export default function Education() {
   return (
     <FadeInSection direction="right">
-      <section id="education" className="max-w-5xl mx-auto px-6 py-10">
+      <section
+        id="education"
+        className="max-w-5xl mx-auto px-6 py-10 scroll-mt-24"
+      >
         <div className="mb-12">
           <h2 className="text-3xl font-bold">Education</h2>
 

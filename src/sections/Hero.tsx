@@ -12,7 +12,7 @@ export default function Hero() {
         {/* HERO SECTION */}
         <section
           id="home"
-          className="h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-900 px-6"
+          className="h-screen scroll-mt-24 flex flex-col justify-center items-center bg-gray-100 text-gray-900 px-6"
         >
           {/* PROFILE IMAGE */}
           <div className="mb-6">

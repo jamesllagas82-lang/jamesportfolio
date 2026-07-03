@@ -18,7 +18,7 @@ const paragraphs = [
 export default function About() {
   return (
     <FadeInCard direction="up">
-      <section id="about" className="max-w-5xl mx-auto py-20 px-6">
+      <section id="about" className="max-w-5xl mx-auto py-20 px-6 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
 
         <div className="space-y-4 text-gray-700 leading-relaxed">
