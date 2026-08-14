@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   /* -----------------------------
      SCROLL TO SECTION
   ------------------------------*/
-  const handleNavClick = (id: string) => {
-    setOpen(false);
-
+  const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
 
     if (!section) return;
@@ -30,9 +32,53 @@ export default function Navbar() {
   };
 
   /* -----------------------------
+     NAVIGATION CLICK
+  ------------------------------*/
+  const handleNavClick = (id: string) => {
+    setOpen(false);
+    setActive(id);
+
+    // Already on homepage
+    if (location.pathname === "/") {
+      scrollToSection(id);
+      return;
+    }
+
+    // On another page, such as ProjectDetails
+    navigate(`/#${id}`);
+  };
+
+  /* -----------------------------
+     HANDLE HASH NAVIGATION
+  ------------------------------*/
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+
+    const id = location.hash.replace("#", "");
+
+    if (!id) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      return;
+    }
+
+    // Wait for the homepage sections to render
+    const timeout = setTimeout(() => {
+      scrollToSection(id);
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [location.pathname, location.hash]);
+
+  /* -----------------------------
      ACTIVE SECTION TRACKER
   ------------------------------*/
   useEffect(() => {
+    if (location.pathname !== "/") return;
+
     const sections = [
       "home",
       "about",
@@ -67,7 +113,7 @@ export default function Navbar() {
     return () => {
       observers.forEach((observer) => observer?.disconnect());
     };
-  }, []);
+  }, [location.pathname]);
 
   /* -----------------------------
      ACTIVE LINK STYLE
@@ -82,36 +128,56 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-
         {/* LOGO */}
-        <h1 className="text-2xl font-extrabold tracking-tight">
+        <button
+          onClick={() => handleNavClick("home")}
+          className="text-2xl font-extrabold tracking-tight"
+        >
           <span className="text-gray-900">James</span>
           <span className="text-pink-600">Dev</span>
-        </h1>
+        </button>
 
         {/* DESKTOP */}
         <div className="hidden md:flex gap-8 font-medium">
-          <button onClick={() => handleNavClick("home")} className={linkClass("home")}>
+          <button
+            onClick={() => handleNavClick("home")}
+            className={linkClass("home")}
+          >
             Home
           </button>
 
-          <button onClick={() => handleNavClick("about")} className={linkClass("about")}>
+          <button
+            onClick={() => handleNavClick("about")}
+            className={linkClass("about")}
+          >
             About
           </button>
 
-          <button onClick={() => handleNavClick("education")} className={linkClass("education")}>
+          <button
+            onClick={() => handleNavClick("education")}
+            className={linkClass("education")}
+          >
             Education
           </button>
 
-          <button onClick={() => handleNavClick("skills")} className={linkClass("skills")}>
+          <button
+            onClick={() => handleNavClick("skills")}
+            className={linkClass("skills")}
+          >
             Skills
           </button>
 
-          <button onClick={() => handleNavClick("projects")} className={linkClass("projects")}>
+          <button
+            onClick={() => handleNavClick("projects")}
+            className={linkClass("projects")}
+          >
             Projects
           </button>
 
-          <button onClick={() => handleNavClick("contact")} className={linkClass("contact")}>
+          <button
+            onClick={() => handleNavClick("contact")}
+            className={linkClass("contact")}
+          >
             Contact
           </button>
         </div>
@@ -120,6 +186,7 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden flex flex-col gap-1"
+          aria-label="Toggle menu"
         >
           <span className="w-6 h-0.5 bg-gray-800"></span>
           <span className="w-6 h-0.5 bg-gray-800"></span>
@@ -136,7 +203,6 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col px-6 gap-4 font-medium">
-
           <button
             onClick={() => handleNavClick("home")}
             className={`text-left ${linkClass("home")}`}
@@ -178,13 +244,11 @@ export default function Navbar() {
           >
             Contact
           </button>
-
         </div>
       </div>
     </nav>
   );
 }
-
 // import { useEffect, useState } from "react";
 
 // export default function Navbar() {

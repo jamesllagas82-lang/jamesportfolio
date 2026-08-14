@@ -66,7 +66,7 @@ export default function App() {
 
       <main>
         <Routes>
-          {/* Portfolio */}
+          {/* Portfolio Homepage */}
           <Route path="/" element={<Home />} />
 
           {/* Project Details */}

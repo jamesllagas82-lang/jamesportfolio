@@ -30,6 +30,7 @@ export const unfinishedProjects: Project[] = [
       "Express.js",
       "Prisma",
       "PostgreSQL",
+      "JWT (Json Web Token)",
     ],
   },
 ];
