@@ -1,7 +1,9 @@
 import FadeInSection from "../components/ui/FadeInSection";
 import FadeInCard from "../components/ui/FadeInCard";
 
-import { projects } from "../constants/projects";
+import ProjectCard from "../components/ui/ProjectCard";
+
+import { completedProjects } from "../constants/projects";
 
 export default function Projects() {
   return (
@@ -11,25 +13,11 @@ export default function Projects() {
           <h2 className="text-3xl font-bold text-center mb-12">
             Featured Projects
           </h2>
+
           <FadeInCard direction="up">
             <div className="grid md:grid-cols-3 gap-6">
-              {projects.map((project) => (
-                <div
-                  key={project.title}
-                  className="
-              bg-white
-              p-6
-              rounded-2xl
-              border
-              hover:-translate-y-2
-              hover:shadow-xl
-              transition-all
-            "
-                >
-                  <h3 className="font-bold text-xl mb-3">{project.title}</h3>
-
-                  <p className="text-gray-600">{project.desc}</p>
-                </div>
+              {completedProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
           </FadeInCard>
