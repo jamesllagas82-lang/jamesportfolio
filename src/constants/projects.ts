@@ -6,7 +6,7 @@ export const completedProjects: Project[] = [
     slug: "hataw-balungao",
     desc: "A tourism management system developed to help manage tourism-related information and services.",
     status: "Completed",
-    tech: ["Laravel", "MySQL", "HTML", "JavaScript", "CSS", "Bootstrap"],
+    tech: ["Laravel", "MySQL", "HTML", "JavaScript", "CSS", "Bootstrap", "Flutter"],
   },
 
   {
