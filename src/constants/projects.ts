@@ -6,7 +6,7 @@ export const completedProjects: Project[] = [
     slug: "hataw-balungao",
     desc: "A tourism management system developed to help manage tourism-related information and services.",
     status: "Completed",
-    tech: ["JavaScript", "React", "Node.js"],
+    tech: ["Laravel", "MySQL", "HTML", "JavaScript", "CSS", "Bootstrap"],
   },
 
   {
@@ -14,7 +14,7 @@ export const completedProjects: Project[] = [
     slug: "hris",
     desc: "A human resources information system with modules for team management, settings, and notifications.",
     status: "Completed",
-    tech: ["JavaScript", "React", "Node.js"],
+    tech: ["TypeScript", "React Native", "Node.js", "JWT", "Express.js", "Expo", "PostgreSQL", "MySQL", "Dbeaver TiDB"],
   },
 ];
 
