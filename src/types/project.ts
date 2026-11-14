@@ -5,3 +5,9 @@ export interface Project {
   status: "Completed" | "In Development";
   tech: string[];
 }
+
+
+export interface BlogProject extends Project {
+  github: string;
+  demo: string;
+}

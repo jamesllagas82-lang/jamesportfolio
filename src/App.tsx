@@ -44,6 +44,7 @@ import Contact from "./sections/Contact";
 import UnfinishedProjects from "./sections/UnfinishedProjects";
 
 import ProjectDetails from "./pages/ProjectDetails";
+import BlogProjects from "./sections/BlogProjects";
 
 function Home() {
   return (
@@ -54,6 +55,7 @@ function Home() {
       <Skills />
       <Projects />
       <UnfinishedProjects />
+      <BlogProjects />
       <Contact />
     </>
   );

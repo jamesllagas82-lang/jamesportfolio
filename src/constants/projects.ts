@@ -1,4 +1,5 @@
 import type { Project } from "../types/project";
+import type { BlogProject } from "../types/project";
 
 export const completedProjects: Project[] = [
   {
@@ -6,7 +7,15 @@ export const completedProjects: Project[] = [
     slug: "hataw-balungao",
     desc: "A tourism management system developed to help manage tourism-related information and services.",
     status: "Completed",
-    tech: ["Laravel", "MySQL", "HTML", "JavaScript", "CSS", "Bootstrap", "Flutter"],
+    tech: [
+      "Laravel",
+      "MySQL",
+      "HTML",
+      "JavaScript",
+      "CSS",
+      "Bootstrap",
+      "Flutter",
+    ],
   },
 
   {
@@ -14,7 +23,17 @@ export const completedProjects: Project[] = [
     slug: "hris",
     desc: "A human resources information system with modules for team management, settings, and notifications.",
     status: "Completed",
-    tech: ["TypeScript", "React Native", "Node.js", "JWT", "Express.js", "Expo", "PostgreSQL", "MySQL", "Dbeaver TiDB"],
+    tech: [
+      "TypeScript",
+      "React Native",
+      "Node.js",
+      "JWT",
+      "Express.js",
+      "Expo",
+      "PostgreSQL",
+      "MySQL",
+      "Dbeaver TiDB",
+    ],
   },
 ];
 
@@ -32,5 +51,17 @@ export const unfinishedProjects: Project[] = [
       "PostgreSQL",
       "JWT (Json Web Token)",
     ],
+  },
+];
+
+export const blogProjects: BlogProject[] = [
+  {
+    title: "Nurture Wellness Village",
+    slug: "nurture-wellness-village",
+    desc: "A nature-inspired wellness blog showcasing relaxing experiences and wellness articles.",
+    status: "Completed",
+    tech: ["HTML", "CSS", "JavaScript", "GitHub"],
+    github: "https://github.com/jamesllagas82-lang/tagaytay",
+    demo: "https://jamesllagas82-lang.github.io/tagaytay",
   },
 ];
